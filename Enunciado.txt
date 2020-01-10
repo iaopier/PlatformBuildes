@@ -8,3 +8,7 @@ O banco de dados deve estar em uma imagem Docker ou em um sandbox SAAS (banco SQ
 
 O projeto deve estar em um repositório no BitBucket e na raiz do projeto deve conter um Postman para apreciação da api.
 
+
+https://howtodoinjava.com/spring-boot2/pagination-sorting-example/
+https://dzone.com/articles/how-to-create-rest-api-with-spring-boot
+
