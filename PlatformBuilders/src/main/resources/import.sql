@@ -1,0 +1,1 @@
+INSERT INTO client("name","cpf","dataNascimento") VALUES("Piercarlo","38260825830","21/02/1992");
