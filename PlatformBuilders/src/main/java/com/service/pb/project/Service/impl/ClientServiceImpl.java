@@ -19,6 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.service.pb.project.Models.Client;
+import com.service.pb.project.Models.ClientIdade;
 import com.service.pb.project.Repository.ClientRepository;
 import com.service.pb.project.Service.ClientService;
 
@@ -46,7 +47,7 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public List<Client> getAllClients(Integer pageNo, Integer pageSize, String name, String cpf){
+	public List<ClientIdade> getAllClients(Integer pageNo, Integer pageSize, String name, String cpf){
 		Pageable paging = PageRequest.of(pageNo, pageSize);
 		Client queryClient = new Client();
 		if (name.isEmpty()) {
@@ -57,15 +58,19 @@ public class ClientServiceImpl implements ClientService {
 		ExampleMatcher matcher = ExampleMatcher.matching().withIgnorePaths("id", "dataNascimento");
 		Example<Client> clientExample = Example.of(queryClient, matcher);
 		Page<Client> pagedResult = clientRepository.findAll(clientExample, paging);
-		List<Client> clientOutput = new ArrayList<Client>();
+		List<ClientIdade> clientOutput = new ArrayList<ClientIdade>();
 		if (pagedResult.hasContent()) {
 			for(Client client : pagedResult.getContent()) {
-				client.setIdade(new Date(System.currentTimeMillis()));
-				clientOutput.add(client);
+				ClientIdade clientIdade = new ClientIdade();
+				clientIdade.setCpf(client.getCpf());
+				clientIdade.setDataNascimento(client.getDataNascimento());
+				clientIdade.setName(client.getName());
+				clientIdade.setIdade(new Date(System.currentTimeMillis()));
+				clientOutput.add(clientIdade);
 			}
 			return clientOutput;
 		} else {
-			return new ArrayList<Client>();
+			return new ArrayList<ClientIdade>();
 		}
 	}
 	

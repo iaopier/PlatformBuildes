@@ -35,9 +35,6 @@ public class Client implements Serializable {
 	private String cpf;
 	@Column(name = "dataNascimento", nullable = false)
 	private Date dataNascimento;
-	@Transient
-	@JsonIgnore
-	private float idade;
 	
 	public Client() {
 	}
@@ -81,14 +78,4 @@ public class Client implements Serializable {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-
-	public float getIdade() {
-		return idade;
-	}
-
-	public void setIdade(Date date) {
-		this.idade = TimeUnit.DAYS.convert(date.getTime() - this.getDataNascimento().getTime(),TimeUnit.MILLISECONDS) / 365;
-	}
-	
-	
 }
