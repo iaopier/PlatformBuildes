@@ -1,6 +1,9 @@
 package com.service.pb.project.Controllers;
 
+import java.sql.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,5 +48,50 @@ public class ClientController {
 	@RequestMapping(value = "/clients", method = RequestMethod.DELETE)
 	public ResponseEntity<?> clientsDelete(@RequestParam String cpf) {
 		return new ResponseEntity<>(clientService.deleteByCpf(cpf), HttpStatus.OK);
-	}	
+	}
+	
+	@RequestMapping(value = "/clients", method = RequestMethod.PUT)
+	public ResponseEntity<?> clientUpdate(@RequestBody Client client, @RequestParam String cpf){
+		
+		Optional<Client> clientOptional = clientService.findByCpf(cpf);
+
+		if (!clientOptional.isPresent())
+			return ResponseEntity.notFound().build();
+		
+		Client clientChange = clientOptional.get();
+		clientChange.setCpf(client.getCpf());
+		clientChange.setName(client.getName());
+		clientChange.setDataNascimento(client.getDataNascimento());
+		
+
+		return new ResponseEntity<>(clientService.save(clientChange), HttpStatus.OK);	
+	}
+	
+	@RequestMapping(value = "/clients", method = RequestMethod.PATCH)
+	public ResponseEntity<?> partialUpdateName(
+	  @RequestBody Map<String, String> client,
+	  @RequestParam String cpf) {
+		
+		Optional<Client> clientOptional = clientService.findByCpf(cpf);
+
+		if (!clientOptional.isPresent())
+			return ResponseEntity.notFound().build();
+		
+		Client clientChange = clientOptional.get();
+		for (Map.Entry<String, String> entry : client.entrySet()) {
+			if(!entry.getValue().equals("")) {
+				if(entry.getKey().equals("name")) {
+					clientChange.setName(entry.getValue());
+				}
+				if(entry.getKey().equals("cpf")) {
+					clientChange.setCpf(entry.getValue());
+				}
+				if(entry.getKey().equals("dataNascimento")) {
+					clientChange.setDataNascimento(Date.valueOf(entry.getValue()));
+				}
+			}
+		}
+		return new ResponseEntity<>(clientService.save(clientChange), HttpStatus.OK);
+		
+	}
 }

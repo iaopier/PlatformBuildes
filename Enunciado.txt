@@ -1,5 +1,5 @@
 *Desenvolva um projeto Java com Spring Boot (utilizando qualquer modulo que achar necessário), que possua uma api REST com CRUD de Cliente (id, nome, cpf, dataNascimento). 
-O CRUD deve possuir uma api de //GET, //POST, //DELETE, **PATCH e **PUT.
+O CRUD deve possuir uma api de //GET, //POST, //DELETE, /*PATCH e /*PUT.
 
 //A api de GET deve aceitar query strings para pesquisar os clientes por CPF e nome. 
 Também é necessário que nessa api os clientes voltem //paginados e que possua um campo por cliente com a //idade calculado dele considerando a data de nascimento.

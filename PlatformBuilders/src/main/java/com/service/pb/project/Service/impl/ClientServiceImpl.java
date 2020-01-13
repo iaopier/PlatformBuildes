@@ -3,6 +3,7 @@ package com.service.pb.project.Service.impl;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -41,7 +42,7 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public Client save(Client client) {
 		clientRepository.save(client);
-		return null;
+		return client;
 	}
 
 	@Override
@@ -83,6 +84,15 @@ public class ClientServiceImpl implements ClientService {
 			}
 		}
 		return false;
+	}
+	
+	@Override
+	public Optional<Client> findByCpf(String cpf) {
+		Client queryClient = new Client();
+		queryClient.setCpf(cpf);
+		ExampleMatcher matcher = ExampleMatcher.matching().withIgnorePaths("id", "dataNascimento","name");
+		Example<Client> clientExample = Example.of(queryClient, matcher);
+		return clientRepository.findOne(clientExample);
 	}
 }
 
