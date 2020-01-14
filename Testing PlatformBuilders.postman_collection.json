@@ -1,0 +1,642 @@
+{
+	"info": {
+		"_postman_id": "347a9e17-1845-4346-b28b-a5f2ee1760d4",
+		"name": "Testing PlatformBuilders",
+		"description": "Collection para testar api criada como Teste do Platform Builders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Verificar se existe algum cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a78eaa1-b629-4326-8a68-be0e1e897583",
+						"exec": [
+							"pm.test(\"name is correct\", () => \r",
+							"  pm.expect(pm.response.json().name).to.equal(\"Piercarlo Fermino Soares\"));\r",
+							"pm.test(\"cpf is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().cpf).to.equal(\"1\"));\r",
+							"pm.test(\"dataNascimento is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().dataNascimento).to.equal(\"1992-02-20\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Piercarlo Fermino Soares\",\n\t\"cpf\":\"1\",\n\t\"dataNascimento\":\"1992-02-21\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Cliente 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a78eaa1-b629-4326-8a68-be0e1e897583",
+						"exec": [
+							"\r",
+							"pm.test(\"name is correct\", () => \r",
+							"  pm.expect(pm.response.json().name).to.equal(\"Carlos Albero\"));\r",
+							"pm.test(\"cpf is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().cpf).to.equal(\"2\"));\r",
+							"pm.test(\"dataNascimento is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().dataNascimento).to.equal(\"1967-05-26\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Carlos Albero\",\n\t\"cpf\":\"2\",\n\t\"dataNascimento\":\"1967-05-27\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Cliente 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a78eaa1-b629-4326-8a68-be0e1e897583",
+						"exec": [
+							"pm.test(\"name is correct\", () => \r",
+							"  pm.expect(pm.response.json().name).to.equal(\"Carlos Albero\"));\r",
+							"pm.test(\"cpf is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().cpf).to.equal(\"3\"));\r",
+							"pm.test(\"dataNascimento is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().dataNascimento).to.equal(\"1977-02-26\"));\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Carlos Albero\",\n\t\"cpf\":\"3\",\n\t\"dataNascimento\":\"1977-02-27\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar se existe algum cliente com paginação",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc86cd89-d3d7-4c5f-87e3-de987382501c",
+						"exec": [
+							"pm.test(\"Testar se o cliente existe\", () => {\r",
+							"    let jsonData = pm.response.json();\r",
+							"\r",
+							"    _.each(jsonData, (item) => {\r",
+							"        pm.expect(item.name).to.eql(\"Carlos Albero\")\r",
+							"        pm.expect(item.dataNascimento).to.eql(\"1967-05-26\")\r",
+							"        pm.expect(item.cpf).to.eql(\"2\")\r",
+							"    })\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Carlos Albero\",\n\t\"cpf\":\"2\",\n\t\"dataNascimento\":\"1967-05-26\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients?name=Carlos Albero&pageNo=0&pageSize=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Carlos Albero"
+						},
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar clientes com mesmo nome",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc86cd89-d3d7-4c5f-87e3-de987382501c",
+						"exec": [
+							"pm.test(\"Testar se o cliente existe\", () => {\r",
+							"    let jsonData = pm.response.json();\r",
+							"    _.each(jsonData, (item) => {\r",
+							"        pm.expect(item.name).to.eql(\"Carlos Albero\")\r",
+							"    })\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients?name=Carlos Albero",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Carlos Albero"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put mudando um client",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2b7eb941-6019-4d23-88ba-62caa298bf77",
+						"exec": [
+							"pm.test(\"name is correct\", () => \r",
+							"  pm.expect(pm.response.json().name).to.equal(\"Carlos Albero Soares\"));\r",
+							"pm.test(\"cpf is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().cpf).to.equal(\"4\"));\r",
+							"pm.test(\"dataNascimento is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().dataNascimento).to.equal(\"1958-05-26\"));\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Carlos Albero Soares\",\n\t\"cpf\":\"4\",\n\t\"dataNascimento\":\"1958-05-27\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients?cpf=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch mudando um client",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2b7eb941-6019-4d23-88ba-62caa298bf77",
+						"exec": [
+							"pm.test(\"name is correct\", () => \r",
+							"  pm.expect(pm.response.json().name).to.equal(\"Piercarlo Fermino Soares\"));\r",
+							"pm.test(\"cpf is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().cpf).to.equal(\"1\"));\r",
+							"pm.test(\"dataNascimento is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().dataNascimento).to.equal(\"1958-05-27\"));\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"\",\n\t\"cpf\":\"\",\n\t\"dataNascimento\":\"1958-05-27\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients?cpf=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificando patch de client",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a04ff5cb-9bde-4a4c-bb7d-27c980f02ee8",
+						"exec": [
+							"pm.test(\"Testar se o cliente existe e o patch foi correto\", () => {\r",
+							"    let jsonData = pm.response.json();\r",
+							"    _.each(jsonData, (item) => {\r",
+							"        pm.expect(item.name).to.eql(\"Piercarlo Fermino Soares\")\r",
+							"        pm.expect(item.dataNascimento).to.eql(\"1958-05-26\")\r",
+							"        pm.expect(item.cpf).to.eql(\"1\")\r",
+							"    })\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients?cpf=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletando client",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00df66c5-56ad-4f9a-adae-867f17ddd7af",
+						"exec": [
+							"pm.test(\"delete is correct\", () => \r",
+							"  pm.expect(pm.response.text()).to.eql(\"true\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clients?cpf=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check if deleted",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6db26b37-bd43-449c-8ed0-c0d2b79375e0",
+						"exec": [
+							"pm.test(\"Testar se o delete funcionou\", () => {\r",
+							"    let jsonData = pm.response.json();\r",
+							"    pm.expect(pm.response.text()).to.eql(\"[]\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients?cpf=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reinserir client previamente existente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a78eaa1-b629-4326-8a68-be0e1e897583",
+						"exec": [
+							"pm.test(\"name is correct\", () => \r",
+							"  pm.expect(pm.response.json().name).to.equal(\"Piercarlo Fermino Soares\"));\r",
+							"pm.test(\"cpf is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().cpf).to.equal(\"1\"));\r",
+							"pm.test(\"dataNascimento is correct\", () =>   \r",
+							"    pm.expect(pm.response.json().dataNascimento).to.equal(\"1992-02-20\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Piercarlo Fermino Soares\",\n\t\"cpf\":\"1\",\n\t\"dataNascimento\":\"1992-02-21\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

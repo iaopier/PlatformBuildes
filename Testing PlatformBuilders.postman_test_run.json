@@ -1,0 +1,712 @@
+{
+	"id": "fe15e1d6-ae95-4f94-a4e8-510aa4cc11c0",
+	"name": "Testing PlatformBuilders",
+	"allTests": [],
+	"timestamp": "2020-01-14T12:32:51.292Z",
+	"collection_id": "347a9e17-1845-4346-b28b-a5f2ee1760d4",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": null,
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"key": "name",
+			"value": "[{\"name\":\"Carlos Albero\",\"cpf\":\"2\",\"dataNascimento\":\"1967-05-26\",\"idade\":52}]",
+			"enabled": true
+		}
+	],
+	"results": [
+		{
+			"name": "Verificar se existe algum cliente",
+			"id": "486a279f-5240-4f94-8e23-581f16fdac0c",
+			"url": "http://localhost:8080/home",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"1344"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "1344",
+			"totalRequestTime": "1344",
+			"iterationResults": {}
+		},
+		{
+			"name": "Inserir Cliente",
+			"id": "e957073d-0241-452a-bbb4-fd1c97e5eb65",
+			"url": "http://localhost:8080/clients",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name is correct": true,
+				"cpf is correct": true,
+				"dataNascimento is correct": true
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"110"
+			],
+			"allTests": [
+				{
+					"name is correct": true,
+					"cpf is correct": true,
+					"dataNascimento is correct": true
+				}
+			],
+			"time": "110",
+			"totalRequestTime": "110",
+			"iterationResults": {}
+		},
+		{
+			"name": "Inserir Cliente 2",
+			"id": "e887da2e-5690-495f-8c8c-6d43807a153d",
+			"url": "http://localhost:8080/clients",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name is correct": true,
+				"cpf is correct": true,
+				"dataNascimento is correct": true
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"19"
+			],
+			"allTests": [
+				{
+					"name is correct": true,
+					"cpf is correct": true,
+					"dataNascimento is correct": true
+				}
+			],
+			"time": "19",
+			"totalRequestTime": "19",
+			"iterationResults": {}
+		},
+		{
+			"name": "Inserir Cliente 3",
+			"id": "7a67c440-7efd-452c-94b7-a677dfa17ca3",
+			"url": "http://localhost:8080/clients",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name is correct": true,
+				"cpf is correct": true,
+				"dataNascimento is correct": true
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"17"
+			],
+			"allTests": [
+				{
+					"name is correct": true,
+					"cpf is correct": true,
+					"dataNascimento is correct": true
+				}
+			],
+			"time": "17",
+			"totalRequestTime": "17",
+			"iterationResults": {}
+		},
+		{
+			"name": "Verificar se existe algum cliente com paginação",
+			"id": "b4959f91-e7b3-454e-af31-0bf5d877588f",
+			"url": "http://localhost:8080/clients?name=Carlos Albero&pageNo=0&pageSize=1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Testar se o cliente existe": true
+			},
+			"testPassFailCounts": {
+				"Testar se o cliente existe": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"54"
+			],
+			"allTests": [
+				{
+					"Testar se o cliente existe": true
+				}
+			],
+			"time": "54",
+			"totalRequestTime": "54",
+			"iterationResults": {}
+		},
+		{
+			"name": "Verificar clientes com mesmo nome",
+			"id": "2b9b5572-dfc3-492b-8a91-1623b6454bbc",
+			"url": "http://localhost:8080/clients?name=Carlos Albero",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Testar se o cliente existe": true
+			},
+			"testPassFailCounts": {
+				"Testar se o cliente existe": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"15"
+			],
+			"allTests": [
+				{
+					"Testar se o cliente existe": true
+				}
+			],
+			"time": "15",
+			"totalRequestTime": "15",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put mudando um client",
+			"id": "731a0932-48eb-4a84-87f1-e53b84d5ac4b",
+			"url": "http://localhost:8080/clients?cpf=2",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name is correct": true,
+				"cpf is correct": true,
+				"dataNascimento is correct": true
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"35"
+			],
+			"allTests": [
+				{
+					"name is correct": true,
+					"cpf is correct": true,
+					"dataNascimento is correct": true
+				}
+			],
+			"time": "35",
+			"totalRequestTime": "35",
+			"iterationResults": {}
+		},
+		{
+			"name": "Patch mudando um client",
+			"id": "f1b29612-812e-4c7a-8ffd-38739c04b092",
+			"url": "http://localhost:8080/clients?cpf=1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name is correct": true,
+				"cpf is correct": true,
+				"dataNascimento is correct": true
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"32"
+			],
+			"allTests": [
+				{
+					"name is correct": true,
+					"cpf is correct": true,
+					"dataNascimento is correct": true
+				}
+			],
+			"time": "32",
+			"totalRequestTime": "32",
+			"iterationResults": {}
+		},
+		{
+			"name": "Verificando patch de client",
+			"id": "fb6465d3-f65e-4a92-8ad7-2ca593a1a993",
+			"url": "http://localhost:8080/clients?cpf=1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Testar se o cliente existe e o patch foi correto": true
+			},
+			"testPassFailCounts": {
+				"Testar se o cliente existe e o patch foi correto": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"16"
+			],
+			"allTests": [
+				{
+					"Testar se o cliente existe e o patch foi correto": true
+				}
+			],
+			"time": "16",
+			"totalRequestTime": "16",
+			"iterationResults": {}
+		},
+		{
+			"name": "Deletando client",
+			"id": "3c62f079-57de-46d3-a8ec-e98e9c515ce4",
+			"url": "http://localhost:8080/clients?cpf=1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"delete is correct": true
+			},
+			"testPassFailCounts": {
+				"delete is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"41"
+			],
+			"allTests": [
+				{
+					"delete is correct": true
+				}
+			],
+			"time": "41",
+			"totalRequestTime": "41",
+			"iterationResults": {}
+		},
+		{
+			"name": "Check if deleted",
+			"id": "b5bfe2ef-9f97-4d57-a0ed-119917028801",
+			"url": "http://localhost:8080/clients?cpf=1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Testar se o delete funcionou": true
+			},
+			"testPassFailCounts": {
+				"Testar se o delete funcionou": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"12"
+			],
+			"allTests": [
+				{
+					"Testar se o delete funcionou": true
+				}
+			],
+			"time": "12",
+			"totalRequestTime": "12",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 20,
+	"totalFail": 0,
+	"totalTime": 1695,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Verificar se existe algum cliente",
+			"id": "486a279f-5240-4f94-8e23-581f16fdac0c",
+			"url": "http://localhost:8080/home",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Inserir Cliente",
+			"id": "e957073d-0241-452a-bbb4-fd1c97e5eb65",
+			"url": "http://localhost:8080/clients",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Inserir Cliente 2",
+			"id": "e887da2e-5690-495f-8c8c-6d43807a153d",
+			"url": "http://localhost:8080/clients",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Inserir Cliente 3",
+			"id": "7a67c440-7efd-452c-94b7-a677dfa17ca3",
+			"url": "http://localhost:8080/clients",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Verificar se existe algum cliente com paginação",
+			"id": "b4959f91-e7b3-454e-af31-0bf5d877588f",
+			"url": "http://localhost:8080/clients?name=Carlos Albero&pageNo=0&pageSize=1",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Testar se o cliente existe": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Verificar clientes com mesmo nome",
+			"id": "2b9b5572-dfc3-492b-8a91-1623b6454bbc",
+			"url": "http://localhost:8080/clients?name=Carlos Albero",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Testar se o cliente existe": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put mudando um client",
+			"id": "731a0932-48eb-4a84-87f1-e53b84d5ac4b",
+			"url": "http://localhost:8080/clients?cpf=2",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Patch mudando um client",
+			"id": "f1b29612-812e-4c7a-8ffd-38739c04b092",
+			"url": "http://localhost:8080/clients?cpf=1",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"name is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cpf is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"dataNascimento is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Verificando patch de client",
+			"id": "fb6465d3-f65e-4a92-8ad7-2ca593a1a993",
+			"url": "http://localhost:8080/clients?cpf=1",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Testar se o cliente existe e o patch foi correto": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Deletando client",
+			"id": "3c62f079-57de-46d3-a8ec-e98e9c515ce4",
+			"url": "http://localhost:8080/clients?cpf=1",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"delete is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Check if deleted",
+			"id": "b5bfe2ef-9f97-4d57-a0ed-119917028801",
+			"url": "http://localhost:8080/clients?cpf=1",
+			"time": "2020-01-14T12:32:51.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Testar se o delete funcionou": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
